@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>Color Scheme Generator</title>
   </head>
   <body>
+    <header>
+      <form action="">
+        <input
+          type="color"
+          id="selected-color"
+          name="selected-color"
+          value="#0094C6"
+          class="form-element"
+        />
+
+        <select
+          id="color-scheme-type"
+          name="color-scheme-type"
+          class="form-element"
+        >
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome (Dark)</option>
+          <option value="monochrome-light">Monochrome (Light)</option>
+          <option value="analogic">Analogic</option>
+          <option value="analogic-complement">Analogic (Complement)</option>
+          <option value="complement">Complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
+        </select>
+
+        <button class="get-color-scheme-btn form-element">
+          Get Color Scheme
+        </button>
+      </form>
+    </header>
     <script src="index.js"></script>
   </body>
 </html>
