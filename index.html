@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <form action="">
+      <form action="" id="color-selection">
         <input
           type="color"
           id="selected-color"
@@ -32,11 +32,20 @@
           <option value="quad">Quad</option>
         </select>
 
-        <button class="get-color-scheme-btn form-element">
+        <button id="get-color-scheme-btn" class="form-element">
           Get Color Scheme
         </button>
       </form>
     </header>
+    <main>
+      <div class="color-palette">
+        <div class="color" data-index="0"></div>
+        <div class="color" data-index="1"></div>
+        <div class="color" data-index="2"></div>
+        <div class="color" data-index="3"></div>
+        <div class="color" data-index="4"></div>
+      </div>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>

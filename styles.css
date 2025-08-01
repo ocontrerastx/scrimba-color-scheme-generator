@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 
+/* Utility Classes */
 .form-element {
     height: 42px;
     color: #212121;
@@ -10,9 +11,10 @@
     border-radius: 4px;
 }
 
+/* Form Styling */
 form {
-    margin: 24px auto;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 24px 20px;
     max-width: 550px;
     display: flex;
     justify-content: center;
@@ -25,7 +27,30 @@ form {
     padding: 0 .25rem;
 }
 
-.get-color-scheme-btn {
+#get-color-scheme-btn {
     padding: 12px 10px;
     background: #FFFFFF;
+}
+
+#get-color-scheme-btn:hover {
+    background-color: #F0F0F0;
+    border-color: #D0D0D0;
+    cursor: pointer;
+}
+
+#get-color-scheme-btn:active {
+    background-color: #E0E0E0;
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* Color Palette Section */
+.color-palette {
+    width: 100vw;
+    height: calc(100vh - 90px);
+    display: flex;
+}
+
+.color-palette > * {
+    flex: 1 1 0;
 }
