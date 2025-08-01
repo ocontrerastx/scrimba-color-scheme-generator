@@ -12,14 +12,17 @@ function getColorScheme() {
     // Build out endpoint, call Color API, and call renderColorScheme with data recieved from Color API
     fetch(`https://www.thecolorapi.com/scheme?hex=${selectedColor}&mode=${selectedColorScheme}&count=${numColors}`)
     .then(response => response.json())
-    .then(data => renderColorScheme(data))
+    .then(data => {
+        let colorsArray = []
+        for(color of data.colors) {
+            colorsArray.unshift(color.hex.value)
+        }
+        renderColorScheme(colorsArray)
+    })
 }
 
-function renderColorScheme(colorsObject) {
-    let colorsArray = []
-    for(color of colorsObject.colors) {
-        colorsArray.push(`<div class="color">${color.hex.value}</div>`)
-    }
-    console.log(colorsArray)
+function renderColorScheme(colorsArray) {
+    colorsArray.forEach((color, index) => {
+        document.querySelector(`[data-index="${index}"`).style.background = color
+    })
 }
-

@@ -45,12 +45,12 @@ form {
 }
 
 /* Color Palette Section */
-.color-palette {
+#color-palette {
     width: 100vw;
     height: calc(100vh - 90px);
     display: flex;
 }
 
-.color-palette > * {
+#color-palette > * {
     flex: 1 1 0;
 }
