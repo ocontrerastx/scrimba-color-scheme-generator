@@ -1,3 +1,5 @@
+getColorScheme()
+
 document.getElementById('color-selection').addEventListener('submit', e => {
     e.preventDefault()
     getColorScheme()
@@ -15,7 +17,7 @@ function getColorScheme() {
     .then(data => {
         let colorsArray = []
         for(color of data.colors) {
-            colorsArray.unshift(color.hex.value)
+            colorsArray.push(color.hex.value)
         }
         renderColorScheme(colorsArray)
     })
