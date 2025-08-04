@@ -1,3 +1,4 @@
+// Get color scheme when page loads
 getColorScheme()
 
 document.getElementById('color-selection').addEventListener('submit', e => {
@@ -17,14 +18,23 @@ function getColorScheme() {
     .then(data => {
         let colorsArray = []
         for(color of data.colors) {
-            colorsArray.push(color.hex.value)
+            colorsArray.unshift({
+                hex: color.hex.value,
+                contrast: color.contrast.value
+            })
         }
         renderColorScheme(colorsArray)
     })
 }
 
 function renderColorScheme(colorsArray) {
+    
     colorsArray.forEach((color, index) => {
-        document.querySelector(`[data-index="${index}"`).style.background = color
+        const colorDiv = document.querySelector(`[data-index="${index}"]`)
+        const colorText = document.querySelector(`[data-index="${index}"] .color-hex`)
+
+        colorDiv.style.background = color.hex
+        colorText.textContent = color.hex
+        colorText.style.color = color.contrast
     })
 }

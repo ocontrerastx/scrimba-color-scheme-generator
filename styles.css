@@ -1,6 +1,7 @@
 *, *::before, *::after{
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Utility Classes */
@@ -53,4 +54,29 @@ form {
 
 #color-palette > * {
     flex: 1 1 0;
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 48px;
+}
+
+.color-hex {
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 840px) {
+    .color-hex {
+            font-size: 24px;
+    }   
+}
+
+@media (max-width: 720px) {
+    #color-palette {
+        flex-direction: column;
+    }
 }
